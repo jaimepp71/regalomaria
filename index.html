@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <title>Inicio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Playfair Display', serif;
+            background: url('fondo.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Ocupa toda la altura de la ventana */
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.1s ease-in-out;
+        }
+
+        body.fade-in {
+            opacity: 1;
+        }
+
+        .container {
+            background-color: white;
+            width: 90%;
+            max-width: 600px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 50px !important;
+            color: #FF6B6B;
+        }
+
+        h2 {
+            font-size: 24px !important; /* Tamaño específico para h2 */
+            color: #333;
+        }
+
+        p {
+            font-size: 16px !important; /* Tamaño específico para p */
+            color: #555;
+        }
+
+        #error-message {
+            color: red;
+            display: none;
+            font-size: 16px;
+        }
+
+        input {
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 16px;
+            width: 80%;
+        }
+
+        button {
+            background-color: #FF6B6B;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+            width: 80%;
+        }
+
+        button:hover {
+            background-color: #E05252;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>TEST DEL AMOR</h1>
+        <h2>¿MERECES TU REGALO DE CUMPLEAÑOS?</h2>
+        <p id="error-message">¡Contraseña incorrecta! Inténtalo de nuevo.</p>
+        <p>Introduce la fecha que nos conocimos y disfruta de tu juego!!</p>
+        <input type="text" id="password" placeholder="dd/mm/aaaa" />
+        <button onclick="checkPassword()">ACCEDER</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.body.classList.add("fade-in");
+        });
+
+        function checkPassword() {
+            const password = document.getElementById("password").value;
+            const errorMessage = document.getElementById("error-message");
+
+            if (password === "25/06/2023") {
+                navigateWithFade("instrucciones.html");
+            } else {
+                errorMessage.style.display = "block";
+            }
+        }
+
+        function navigateWithFade(url) {
+            document.body.classList.remove("fade-in");
+            document.body.style.opacity = "0";
+            setTimeout(() => {
+                window.location.href = url;
+            }, 500);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <title>¡ENHORABUENA!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Playfair Display', serif;
+            background: url('eh.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con opacidad */
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .next-button {
+            background-color: #FF6B6B;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 10px;
+            text-transform: uppercase;
+        }
+
+        .next-button:hover {
+            background-color: #E05252;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>¡Enhorabuena!</h1>
+        <p>Sigue así, confío en ti.</p>
+        <button class="next-button" onclick="goToNext()">Ir a la pregunta 3</button>
+    </div>
+
+    <script>
+        function goToNext() {
+            window.location.href = "pregunta3.html"; // Redirige a la pregunta 2
+        }
+    </script>
+</body>
+</html>

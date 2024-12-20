@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <title>Pregunta 3</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Playfair Display', serif;
+            background: #f4d9d9; /* Fondo rosado claro */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background-color: white;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .top-section {
+            display: flex;
+            justify-content: space-between;
+            flex-grow: 1;
+            padding-bottom: 20px;
+        }
+
+        .explanation {
+            width: 25%;
+            background-color: #f9f9f9;
+            border: 2px solid #ccc;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: justify;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+        }
+
+        .explanation .question-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-align: center;
+            text-transform: uppercase;
+            color: #333;
+        }
+
+        .image-container {
+            width: 70%;
+            max-height: 500px;
+            background-color: #f9f9f9;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .answers {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+            padding-top: 20px;
+        }
+
+        .answer-button {
+            background-color: #FF6B6B;
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 10px;
+            text-transform: uppercase;
+        }
+
+        .answer-button:hover {
+            background-color: #E05252;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top-section">
+            <div class="explanation">
+                <p class="question-title">Pregunta 3</p>
+                <p>Este verano, hicimos un viaje precioso a Cullera, que repetiría mil y una veces más.</p>
+                <p>La primera noche, decidimos cenar en un restaurante muy recomendable, donde nos sirvieron unos fingers de queso magníficos (obviamente, es ironía).</p>
+                <p>¿A qué sabían los fingers?</p>
+            </div>
+            <div class="image-container">
+                <img src="p3.jpg" alt="Imagen relacionada con la pregunta">
+            </div>
+        </div>
+        <div class="answers">
+            <button class="answer-button" onclick="checkAnswer(false)">A queso</button>
+            <button class="answer-button" onclick="checkAnswer(true)">A pescado</button>
+            <button class="answer-button" onclick="checkAnswer(false)">A gloria</button>
+            <button class="answer-button" onclick="checkAnswer(false)">Ninguna de las anteriores</button>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswer(isCorrect) {
+            if (isCorrect) {
+                window.location.href = "enhorabuena3.html"; // Redirige a la página de enhorabuena para la pregunta 3
+            } else {
+                window.location.href = "gameover.html"; // Redirige a la página de game over
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <title>Pregunta 4</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Playfair Display', serif;
+            background: #f3e9d2; /* Fondo beige claro */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background-color: white;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .top-section {
+            display: flex;
+            justify-content: space-between;
+            flex-grow: 1;
+            padding-bottom: 20px;
+        }
+
+        .explanation {
+            width: 25%;
+            background-color: #f9f9f9;
+            border: 2px solid #ccc;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: justify;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+        }
+
+        .explanation .question-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-align: center;
+            text-transform: uppercase;
+            color: #333;
+        }
+
+        .image-container {
+            width: 70%;
+            max-height: 500px;
+            background-color: #f9f9f9;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .answers {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+            padding-top: 20px;
+        }
+
+        .answer-button {
+            background-color: #FF6B6B;
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 10px;
+            text-transform: uppercase;
+        }
+
+        .answer-button:hover {
+            background-color: #E05252;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top-section">
+            <div class="explanation">
+                <p class="question-title">Pregunta 4</p>
+                <p>En el viaje a Florencia, una de las noches cenamos con María e Iván.</p>
+                <p>Fue una cena riquísima (aunque bastante cara, jaja). Sin embargo, lo más destacable de la noche fue lo patosos que sois Iván y tú.</p>
+                <p>¿Quién fue el más torpe?</p>
+            </div>
+            <div class="image-container">
+                <img src="p4.jpg" alt="Imagen relacionada con la pregunta">
+            </div>
+        </div>
+        <div class="answers">
+            <button class="answer-button" onclick="checkAnswer(false)">Iván</button>
+            <button class="answer-button" onclick="checkAnswer(true)">Tú</button>
+            <button class="answer-button" onclick="checkAnswer(false)">Ambos por igual</button>
+            <button class="answer-button" onclick="checkAnswer(false)">Pregunta trampa, somos María y yo</button>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswer(isCorrect) {
+            if (isCorrect) {
+                window.location.href = "enhorabuena4.html"; // Redirige a la página de enhorabuena para la pregunta 4
+            } else {
+                window.location.href = "gameover.html"; // Redirige a la página de game over
+            }
+        }
+    </script>
+</body>
+</html>
